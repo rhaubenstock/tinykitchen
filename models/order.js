@@ -6,20 +6,20 @@ const OrderSchema =
 Schema(
 	{
 		items: {
-				type: String,
-				required: true,
+            type: String,
+            required: true,
 		},
 		isComplete:{
-		type: Boolean,
-		default: false,
+            type: Boolean,
+            default: false,
 		},
 		name:{
-		type: String,
-		required: true,
+            type: String,
+            required: true,
 		},
 		address:{
-		type:String,
-		required: true,
+            type: String,
+            required: true,
 		},
 	},
 	{

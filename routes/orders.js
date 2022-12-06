@@ -21,8 +21,12 @@ router.post('/', (req, res) => {
 		.then(order => res.json(order.items))
 		.catch((err) => res.status(422).json(err));
 });
-router.patch('/', (_req, res) => {
-    res.json('PATCH Success');
+router.patch('/:orderId', (req, res) => {
+    const id = req.params.order_id;
+    const filter = { id: id };
+    Order.findOneAndUpdate(filter, req.body)
+        .then(order => res.json(order))
+        .catch(err => res.status(404).json(err));
 });
 router.delete('/:orderId', (req, res) => {
     const id = req.params.order_id;
