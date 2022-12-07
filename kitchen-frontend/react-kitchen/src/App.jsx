@@ -1,12 +1,20 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import './App.css'
+import { Orders } from './components/Orders.jsx';
+import { OrderForm } from './components/OrderForm.jsx';
+
+const myOrders = [
+  {"id": 4, "name": "Alice", "address": "North Pole", "items": "Tea Leaf Salad", "isComplete": false},
+];
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <div className="App">
+      {Orders(myOrders)}
+      {OrderForm()}
       <div>
         <a href="https://vitejs.dev" target="_blank">
           <img src="/vite.svg" className="logo" alt="Vite logo" />
